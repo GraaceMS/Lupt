@@ -55,7 +55,7 @@ const EditPlayer: FC = () => {
     try {
       const playerData = await getPlayer(id);
       setName(playerData.name);
-      setAge(playerData.age);
+      setAge(playerData.age); // Atualiza a idade assim que os dados são carregados
       setteam_id(playerData.team_id);
       setCurrentPlayer(playerData); 
       setShowForm(true);
@@ -70,13 +70,11 @@ const EditPlayer: FC = () => {
         id: currentPlayer?.id,
         name,
         age,
-         team_id,
+        team_id,
       };
-      console.log('handlesaveplayer     ',team_id)
 
       if (playerData.id) {
         await updatePlayer(playerData.id, playerData);
-        console.log('handlesavetry      ',playerData)
         Swal.fire({
           title: 'Sucesso',
           text: 'Jogador editado com sucesso',
@@ -125,26 +123,28 @@ const EditPlayer: FC = () => {
         <>
           {showForm ? (
             <div className={styles.form}>
-
-              <div className={styles.back}> <button
-                onClick={handleGoHome}
-                className={`${styles.button} ${styles.goHomeButton}`}
-              ><IoArrowBack style={{ marginRight: '8px' }} />
-                Voltar
-              </button>
+              <div className={styles.back}>
+                <button
+                  onClick={handleGoHome}
+                  className={`${styles.button} ${styles.goHomeButton}`}
+                >
+                  <IoArrowBack style={{ marginRight: '8px' }} />
+                  Voltar
+                </button>
               </div>
-              <h2 className="text-2xl font-bold mb-6">{'Editar Jogador'}</h2>
+              <h2 className="text-2xl font-bold mb-6">Editar Jogador</h2>
               <div className={styles.inputGroup}>
                 <input
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  className={styles.input}
                 />
-
-              <span className={styles.divider}></span>
+                <span className={styles.divider}></span>
                 <input
                   type="number"
-                  placeholder='Idade'
+                  placeholder="Idade"
+                  value={age} // Define o valor do campo como o estado da idade
                   onChange={(e) => setAge(Number(e.target.value))}
                   className={styles.input}
                 />
