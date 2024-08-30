@@ -1,0 +1,79 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  padding: 20px;
+  max-width: 100%;
+}
+
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.inputGroup {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.divider {
+  width: 50px;
+}
+
+.time {
+  color: gray;
+}
+
+.inputGroup label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #4a4a4a;
+}
+
+.inputGroup input,
+.inputGroup select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-self: start;
+  border-radius: 5px;
+  border-style: none;
+
+}
+
+.back {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+
+.saveButton {
+  background-color: #1770be;
+  color: white;
+}
+
+.cancelButton {
+  background-color: #1770be;
+  color: white;
+}

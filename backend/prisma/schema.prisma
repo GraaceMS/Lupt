@@ -1,0 +1,29 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Teams {
+  id         Int       @id @default(autoincrement())
+  name       String
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  players    Players[]
+}
+
+model Players {
+  id         Int      @id @default(autoincrement())
+  name       String
+  age        Int
+  team_id    Int
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  team       Teams    @relation(fields: [team_id], references: [id])
+
+  @@map("players")
+}

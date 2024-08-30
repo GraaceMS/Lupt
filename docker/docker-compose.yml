@@ -1,0 +1,40 @@
+# version: '3'
+
+# services:
+#   database-service:
+#     image: postgres:10
+#     container_name: app-database
+#     environment:
+#       - POSTGRES_DB=postgres
+#       - POSTGRES_DB_TEST=postgres
+#       - POSTGRES_USER=root
+#       - POSTGRES_PASSWORD=123456
+#     ports:
+#       - '5432:5432'
+#     expose:
+#       - '5432'
+#     volumes:
+#       - ./postgres:/var/lib/postgresql/data
+#       # - ./database/schema.sql:/docker-entrypoint-initdb.d/0.schema.sql
+
+
+version: '3'
+
+services:
+  database-service:
+    image: postgres:10
+    container_name: app-database
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_DB_TEST=postgres
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=123456
+    ports:
+      - '5432:5432'
+    expose:
+      - '5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

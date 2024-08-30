@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Teams" ALTER COLUMN "created_at" SET DEFAULT CURRENT_TIMESTAMP;
+
+-- AlterTable
+ALTER TABLE "players" ALTER COLUMN "created_at" SET DEFAULT CURRENT_TIMESTAMP;
