@@ -3,6 +3,7 @@ Obs:
 Rode primeiro o backend e depois o frontend.
 Comandos:
 back: npm start
+///////////////////////
 front: npm run dev
 
 PAGINA INICIAL 
